@@ -9,19 +9,20 @@ body {
 
 body.dark-mode {
     color: #ffffff;
+    background-image: radial-gradient(100% 100% at 100% 0, #333333 0, #171717 100%);
 }
 
 body.dark-mode header,
 body.dark-mode nav,
 body.dark-mode main,
 body.dark-mode footer {
-    background-color: #000000; /* Set the background color for boxes in dark mode */
-    color: #ffffff; /* Set the text color for boxes in dark mode */
+    background-color: #333333; 
+    color: #ffffff; 
 }
 
 body.dark-mode h1,
 body.dark-mode h2 {
-    color: #ffffff; /* Set text color for h1 and h2 in dark mode */
+    color: #ffffff; 
 }
 
 h1, h2 {
