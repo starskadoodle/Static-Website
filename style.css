@@ -83,6 +83,7 @@ img:hover {
     transform: scale(1.05);
 }
 
+/* taken from some website?? */
 .button {
     align-items: center;
     appearance: none;
@@ -132,6 +133,10 @@ img:hover {
     text-decoration: none;
 }
 
+.button.dark-mode {
+    background-image: radial-gradient(100% 100% at 100% 0, #404040 0, #2b2b2b 100%);
+}
+
 .c-programming-image {
     display: block;
     margin: auto;
@@ -149,4 +154,3 @@ img:hover {
     margin-bottom: 20px;
     border: 1px solid #ddd;
 }
-

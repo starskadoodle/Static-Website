@@ -1,18 +1,15 @@
 function toggleDarkMode() {
-    const body = document.body;
-    body.classList.toggle('dark-mode');
-    const isDarkMode = body.classList.contains('dark-mode');
-    localStorage.setItem('dark-mode', isDarkMode ? 'enabled' : 'disabled');
+    const isDarkMode = document.body.classList.toggle('dark-mode');
+    document.querySelectorAll('.button').forEach(button => button.classList.toggle('dark-mode', isDarkMode));
+    localStorage.setItem('dark-mode', isDarkMode ? 'true' : 'false');
 }
 
 function checkDarkModePreference() {
-    const savedPreference = localStorage.getItem('dark-mode');
-
-    if (savedPreference === 'enabled') {
-        document.body.classList.add('dark-mode');
-    } else {
-        document.body.classList.remove('dark-mode');
-    }
+    const savedPreference = localStorage.getItem('dark-mode') === 'true';
+    [document.body, ...document.querySelectorAll('.button')].forEach(element => element.classList.toggle('dark-mode', savedPreference));
 }
 
 document.addEventListener('DOMContentLoaded', checkDarkModePreference);
+
+const darkModeToggle = document.getElementById('darkModeToggle');
+if (darkModeToggle) darkModeToggle.addEventListener('click', toggleDarkMode);
