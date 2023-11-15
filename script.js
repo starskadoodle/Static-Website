@@ -8,12 +8,8 @@ function toggleDarkMode() {
 }
 
 function checkDarkModePreference() {
-    try {
-        const savedPreference = localStorage.getItem(DARK_MODE_KEY) === 'true';
-        [document.body, ...document.querySelectorAll('.button')].forEach(element => element.classList.toggle(DARK_MODE_CLASS, savedPreference));
-    } catch (error) {
-        console.error('Error checking dark mode preference:', error);
-    }
+    const savedPreference = localStorage.getItem(DARK_MODE_KEY) === 'true';
+    [document.body, ...document.querySelectorAll('.button')].forEach(element => element.classList.toggle(DARK_MODE_CLASS, savedPreference));
 }
 
 document.addEventListener('DOMContentLoaded', checkDarkModePreference);
